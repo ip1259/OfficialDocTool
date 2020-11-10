@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>710</height>
+    <width>900</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,7 +21,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
+    <width>900</width>
     <height>700</height>
    </size>
   </property>
@@ -43,12 +43,20 @@
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
     <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,0,1,0,1,0,0,4,1">
+     <layout class="QHBoxLayout" name="Layout_view" stretch="1,1,0,1,0,1,0,1,4,1">
       <item>
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_4">
@@ -58,7 +66,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3"/>
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_5">
@@ -68,7 +80,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_4"/>
+       <widget class="QLineEdit" name="lineEdit_4">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label">
@@ -85,10 +101,18 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_5"/>
+       <widget class="QLineEdit" name="lineEdit_5">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_6"/>
+       <widget class="QLineEdit" name="lineEdit_6">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -106,38 +130,6 @@
       <property name="spacing">
        <number>20</number>
       </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_date">
-        <property name="font">
-         <font>
-          <family>微軟正黑體</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>日期</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_name">
-        <property name="font">
-         <font>
-          <family>微軟正黑體</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>承辦人</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QLineEdit" name="lineEdit_number"/>
-      </item>
-      <item row="0" column="2">
-       <widget class="QCalendarWidget" name="calendarWidget"/>
-      </item>
       <item row="4" column="3">
        <layout class="QGridLayout" name="Layout_btn">
         <item row="0" column="2">
@@ -220,11 +212,111 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="2">
-       <widget class="QLineEdit" name="lineEdit_org"/>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_number">
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>原文號</string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit_number</cstring>
+        </property>
+       </widget>
       </item>
-      <item row="5" column="2">
-       <widget class="QLineEdit" name="lineEdit_name"/>
+      <item row="3" column="2">
+       <widget class="QLineEdit" name="lineEdit_number"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_org">
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>發文機關</string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit_org</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLineEdit" name="lineEdit_word"/>
+      </item>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="cb_org">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+         </font>
+        </property>
+        <item>
+         <property name="text">
+          <string>勞動部勞動力發展署中彰投分署</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>臺中市政府</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>臺中市政府勞工局</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_reason">
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>事由</string>
+        </property>
+        <property name="buddy">
+         <cstring>textEdit_reason</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_date">
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>日期</string>
+        </property>
+        <property name="buddy">
+         <cstring>calendar</cstring>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_word">
@@ -237,7 +329,32 @@
         <property name="text">
          <string>原文字</string>
         </property>
+        <property name="buddy">
+         <cstring>lineEdit_word</cstring>
+        </property>
        </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_name">
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>承辦人</string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit_name</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLineEdit" name="lineEdit_name"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="lineEdit_org"/>
       </item>
       <item row="2" column="3">
        <widget class="QComboBox" name="cb_word">
@@ -266,19 +383,6 @@
           <string>府授勞就</string>
          </property>
         </item>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_org">
-        <property name="font">
-         <font>
-          <family>微軟正黑體</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>發文機關</string>
-        </property>
        </widget>
       </item>
       <item row="5" column="3">
@@ -325,51 +429,6 @@
         </item>
        </widget>
       </item>
-      <item row="4" column="2">
-       <widget class="QTextEdit" name="textEdit_reason">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>100</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLineEdit" name="lineEdit_word"/>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_number">
-        <property name="font">
-         <font>
-          <family>微軟正黑體</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>原文號</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_reason">
-        <property name="font">
-         <font>
-          <family>微軟正黑體</family>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>事由</string>
-        </property>
-       </widget>
-      </item>
       <item row="6" column="3">
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="1">
@@ -394,44 +453,24 @@
         </item>
        </layout>
       </item>
-      <item row="1" column="3">
-       <widget class="QComboBox" name="cb_org">
+      <item row="4" column="2">
+       <widget class="QTextEdit" name="textEdit_reason">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="minimumSize">
+        <property name="maximumSize">
          <size>
-          <width>0</width>
-          <height>0</height>
+          <width>16777215</width>
+          <height>100</height>
          </size>
         </property>
-        <property name="font">
-         <font>
-          <family>微軟正黑體</family>
-         </font>
-        </property>
-        <item>
-         <property name="text">
-          <string>勞動部勞動力發展署中彰投分署</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>臺中市政府</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>臺中市政府勞工局</string>
-         </property>
-        </item>
        </widget>
       </item>
-      <item row="0" column="3">
-       <widget class="QDateEdit" name="dateEdit"/>
+      <item row="0" column="2">
+       <widget class="QCalendarWidget" name="calendar"/>
       </item>
      </layout>
     </item>
@@ -443,14 +482,14 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>900</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>calendarWidget</tabstop>
+  <tabstop>calendar</tabstop>
   <tabstop>lineEdit_org</tabstop>
   <tabstop>cb_org</tabstop>
   <tabstop>lineEdit_word</tabstop>
@@ -510,22 +549,6 @@
     <hint type="destinationlabel">
      <x>421</x>
      <y>590</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>calendarWidget</sender>
-   <signal>clicked(QDate)</signal>
-   <receiver>dateEdit</receiver>
-   <slot>setDate(QDate)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>332</x>
-     <y>152</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>525</x>
-     <y>124</y>
     </hint>
    </hints>
   </connection>
