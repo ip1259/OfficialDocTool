@@ -1,13 +1,16 @@
 #include "mainwindow.h"
-#include "funcTest.cpp"
 
 #include <QApplication>
 
+using namespace std;
+
 int main(int argc, char *argv[])
 {
-    funcTest::test();
+    printf("´ú¸Õ¿é¥X");
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
     return a.exec();
 }
+
+
