@@ -15,6 +15,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_lineEdit_org_textChanged(const QString &arg1);
+
+    void on_textEdit_reason_textChanged();
+
+    void on_btn_rmws_clicked();
+
+    void on_calendar_selectionChanged();
+
+    void on_btn_copy_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -43,51 +43,51 @@
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
     <item row="1" column="0">
-     <layout class="QHBoxLayout" name="Layout_view" stretch="1,1,0,1,0,1,0,1,4,1">
+     <layout class="QHBoxLayout" name="Layout_view" stretch="1,1,0,1,0,1,0,1,0,1">
       <item>
-       <widget class="QLineEdit" name="lineEdit_2">
+       <widget class="QLineEdit" name="lineEdit_viewDate">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="lineEdit_viewWord">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_wn">
         <property name="text">
          <string>字第</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_3">
+       <widget class="QLineEdit" name="lineEdit_viewNum">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="label_nm">
         <property name="text">
          <string>號</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_4">
+       <widget class="QLineEdit" name="lineEdit_viewOrg">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_send">
         <property name="text">
          <string>函</string>
         </property>
@@ -101,14 +101,25 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_5">
+       <widget class="QTextEdit" name="textEdit_viewReason">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微軟正黑體</family>
+         </font>
+        </property>
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_6">
+       <widget class="QLineEdit" name="lineEdit_viewName">
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -132,31 +143,31 @@
       </property>
       <item row="4" column="3">
        <layout class="QGridLayout" name="Layout_btn">
-        <item row="0" column="2">
-         <spacer name="verticalSpacer">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_2">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
-            <height>40</height>
+            <width>40</width>
+            <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="2" column="2">
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="btn_rmws">
+          <property name="minimumSize">
            <size>
-            <width>20</width>
-            <height>40</height>
+            <width>90</width>
+            <height>30</height>
            </size>
           </property>
-         </spacer>
+          <property name="text">
+           <string>移除空白字元</string>
+          </property>
+         </widget>
         </item>
         <item row="1" column="4">
          <spacer name="horizontalSpacer">
@@ -171,44 +182,31 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="0">
-         <spacer name="horizontalSpacer_2">
+        <item row="0" column="1">
+         <spacer name="verticalSpacer">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
         </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="btn_dash">
-          <property name="minimumSize">
+        <item row="2" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
            <size>
-            <width>90</width>
-            <height>30</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
-          <property name="text">
-           <string>插入&quot;—&quot;</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="btn_rmws">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>移除空白字元</string>
-          </property>
-         </widget>
+         </spacer>
         </item>
        </layout>
       </item>
@@ -499,7 +497,6 @@
   <tabstop>lineEdit_name</tabstop>
   <tabstop>cb_name</tabstop>
   <tabstop>btn_rmws</tabstop>
-  <tabstop>btn_dash</tabstop>
   <tabstop>btn_copy</tabstop>
  </tabstops>
  <resources/>
@@ -511,8 +508,8 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>499</x>
-     <y>257</y>
+     <x>889</x>
+     <y>264</y>
     </hint>
     <hint type="destinationlabel">
      <x>397</x>
@@ -527,8 +524,8 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>479</x>
-     <y>300</y>
+     <x>889</x>
+     <y>307</y>
     </hint>
     <hint type="destinationlabel">
      <x>411</x>
@@ -543,12 +540,76 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>479</x>
-     <y>588</y>
+     <x>889</x>
+     <y>539</y>
     </hint>
     <hint type="destinationlabel">
-     <x>421</x>
-     <y>590</y>
+     <x>481</x>
+     <y>538</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_org</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>lineEdit_viewOrg</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>186</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>634</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_word</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>lineEdit_viewWord</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>637</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_number</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>lineEdit_viewNum</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>632</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_name</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>lineEdit_viewName</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>535</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>837</x>
+     <y>635</y>
     </hint>
    </hints>
   </connection>

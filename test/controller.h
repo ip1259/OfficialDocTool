@@ -23,9 +23,9 @@ class Controller
             QClipboard *clipboard = QApplication::clipboard();
             clipboard->setText(str);
         }
-        static string combineAsTable(QString date, QString word, QString number, QString org, QString reason, QString name)
+        static string combineAsTable(QString date, QString word, QString number, QString org, QString reason, QString name, QString wn, QString nm, QString send)
         {
-            return date.toStdString() + "\t" + word.toStdString() + "\t" + "¦r²Ä" + "\t" + number.toStdString() + "\t" + "¸¹" + "\t" + org.toStdString() + "\t" +"¨ç" + "\t\t" + reason.toStdString() + "\t" + name.toStdString();
+            return date.toStdString() + "\t" + word.toStdString() + "\t" + wn.toStdString() + "\t" + number.toStdString() + "\t" + nm.toStdString() + "\t" + org.toStdString() + "\t" + send.toStdString() + "\t\t" + reason.toStdString() + "\t" + name.toStdString();
         }
 
 
