@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "controller.h"
+#include <QTextCodec>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,12 +19,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_lineEdit_org_textChanged(const QString &arg1)
 {
+    QTextCodec *codec = QTextCodec::codecForName("Big5-ETen");
 
+    if(ui->lineEdit_org->text() == codec->toUnicode("勞動部勞動力發展署中彰投分署"))
+    {
+        ui->cb_word->clear();
+        ui->cb_word->addItems({codec->toUnicode("中分署秘"),codec->toUnicode("中分署訓")});
+    }
+    if(ui->lineEdit_org->text() == codec->toUnicode("臺中市政府"))
+    {
+        ui->cb_word->clear();
+        ui->cb_word->addItem(codec->toUnicode("府授勞就"));
+    }
+    if(ui->lineEdit_org->text() == codec->toUnicode("臺中市政府勞工局"))
+    {
+        ui->cb_word->clear();
+        ui->cb_word->addItem(codec->toUnicode("中市勞就"));
+    }
 }
 
 void MainWindow::on_textEdit_reason_textChanged()
 {
     ui->textEdit_viewReason->setText(ui->textEdit_reason->toPlainText());
+
 }
 
 void MainWindow::on_btn_rmws_clicked()
