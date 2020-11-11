@@ -485,20 +485,19 @@
          </widget>
         </item>
         <item>
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
+         <widget class="QLabel" name="label_msg">
+          <property name="minimumSize">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>300</width>
+            <height>0</height>
            </size>
           </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_msg">
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="font">
            <font>
             <family>微軟正黑體</family>
@@ -709,19 +708,23 @@
   <tabstop>lineEdit_number</tabstop>
   <tabstop>btn_rmws</tabstop>
   <tabstop>cb_name</tabstop>
+  <tabstop>btn_nextData</tabstop>
+  <tabstop>btn_copyAll</tabstop>
   <tabstop>btn_copy</tabstop>
   <tabstop>btn_clear</tabstop>
   <tabstop>btn_clearAll</tabstop>
-  <tabstop>lineEdit_viewWord</tabstop>
-  <tabstop>lineEdit_viewOrg</tabstop>
-  <tabstop>textEdit_viewReason</tabstop>
-  <tabstop>lineEdit_viewName</tabstop>
+  <tabstop>btn_next</tabstop>
+  <tabstop>btn_viewPre</tabstop>
   <tabstop>lineEdit_org</tabstop>
   <tabstop>lineEdit_word</tabstop>
   <tabstop>textEdit_reason</tabstop>
   <tabstop>lineEdit_name</tabstop>
   <tabstop>lineEdit_viewDate</tabstop>
+  <tabstop>lineEdit_viewWord</tabstop>
   <tabstop>lineEdit_viewNum</tabstop>
+  <tabstop>lineEdit_viewOrg</tabstop>
+  <tabstop>textEdit_viewReason</tabstop>
+  <tabstop>lineEdit_viewName</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -732,7 +735,7 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>613</x>
+     <x>487</x>
      <y>248</y>
     </hint>
     <hint type="destinationlabel">
@@ -748,7 +751,7 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>613</x>
+     <x>487</x>
      <y>292</y>
     </hint>
     <hint type="destinationlabel">
@@ -764,7 +767,7 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>613</x>
+     <x>487</x>
      <y>471</y>
     </hint>
     <hint type="destinationlabel">
@@ -844,7 +847,7 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>613</x>
+     <x>487</x>
      <y>292</y>
     </hint>
     <hint type="destinationlabel">

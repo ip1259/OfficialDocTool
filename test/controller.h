@@ -27,7 +27,7 @@ class Controller
         {
             return date.toStdString() + "\t" + word.toStdString() + "\t" + wn.toStdString() + "\t" + number.toStdString() + "\t" + nm.toStdString() + "\t" + org.toStdString() + "\t" + send.toStdString() + "\t\t" + reason.toStdString() + "\t" + name.toStdString();
         }
-        QString chinese(const char* chars)
+        static QString chinese(const char* chars)
         {
             QTextCodec *codec = QTextCodec::codecForName("Big5-ETen");
             return codec->toUnicode(chars);

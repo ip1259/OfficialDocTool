@@ -88,5 +88,12 @@ void MainWindow::on_btn_nextData_clicked()
     else
     {
         database.addData(ui->lineEdit_viewDate->text(),ui->lineEdit_viewWord->text(),ui->lineEdit_viewNum->text(),ui->lineEdit_viewOrg->text(),ui->textEdit_viewReason->toPlainText(),ui->lineEdit_viewName->text());
+        ui->lineEdit_viewDate->clear();
+        ui->lineEdit_viewWord->clear();
+        ui->lineEdit_viewNum->clear();
+        ui->lineEdit_viewOrg->clear();
+        ui->textEdit_viewReason->clear();
+        ui->lineEdit_viewName->clear();
+        ui->lcdNumber->display(ui->lcdNumber->intValue()+1);
     }
 }
