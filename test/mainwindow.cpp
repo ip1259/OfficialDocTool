@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "controller.h"
 #include <QTextCodec>
+#include "database.cpp"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -15,6 +16,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+DataBase database = DataBase();
 
 
 void MainWindow::on_lineEdit_org_textChanged(const QString &arg1)
@@ -46,6 +49,7 @@ void MainWindow::on_textEdit_reason_textChanged()
 
 void MainWindow::on_btn_rmws_clicked()
 {
+    ui->textEdit_reason->paste();
     ui->textEdit_reason->setText(ui->textEdit_reason->toPlainText().remove("\n"));
     ui->textEdit_reason->setText(ui->textEdit_reason->toPlainText().remove(" "));
 }
@@ -73,4 +77,16 @@ void MainWindow::on_btn_clearAll_clicked()
     ui->lineEdit_word->clear();
     ui->lineEdit_number->clear();
     ui->lineEdit_name->clear();
+}
+
+void MainWindow::on_btn_nextData_clicked()
+{
+    if(ui->lineEdit_viewDate->text().isEmpty() || ui->lineEdit_viewWord->text().isEmpty() || ui->lineEdit_viewNum->text().isEmpty() || ui->lineEdit_viewOrg->text().isEmpty() || ui->textEdit_viewReason->toPlainText().isEmpty() || ui->lineEdit_viewName->text().isEmpty())
+    {
+        ui->label_msg->setText(Controller::chinese("訊息:資料不能空白!"));
+    }
+    else
+    {
+        database.addData(ui->lineEdit_viewDate->text(),ui->lineEdit_viewWord->text(),ui->lineEdit_viewNum->text(),ui->lineEdit_viewOrg->text(),ui->textEdit_viewReason->toPlainText(),ui->lineEdit_viewName->text());
+    }
 }

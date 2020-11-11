@@ -30,6 +30,8 @@ private slots:
 
     void on_btn_clearAll_clicked();
 
+    void on_btn_nextData_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
