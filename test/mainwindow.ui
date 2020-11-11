@@ -500,7 +500,7 @@
       </item>
       <item row="7" column="0" colspan="4">
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="1">
+        <item row="0" column="2">
          <widget class="QPushButton" name="btn_copy">
           <property name="minimumSize">
            <size>
@@ -508,23 +508,60 @@
             <height>40</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>微軟正黑體</family>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
            <string>複製到剪貼簿</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_clear">
+          <property name="minimumSize">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>200</width>
+            <height>40</height>
            </size>
           </property>
-         </spacer>
+          <property name="font">
+           <font>
+            <family>微軟正黑體</family>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>清除</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="btn_clearAll">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微軟正黑體</family>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>全部清除</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

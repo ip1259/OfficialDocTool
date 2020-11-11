@@ -26,6 +26,10 @@ private slots:
 
     void on_btn_copy_clicked();
 
+    void on_btn_clear_clicked();
+
+    void on_btn_clearAll_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

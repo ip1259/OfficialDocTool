@@ -59,3 +59,18 @@ void MainWindow::on_btn_copy_clicked()
 {
     Controller::copyToClipboard(QString::fromStdString(Controller::combineAsTable(ui->lineEdit_viewDate->text(),ui->lineEdit_viewWord->text(),ui->lineEdit_viewNum->text(),ui->lineEdit_viewOrg->text(),ui->textEdit_viewReason->toPlainText(),ui->lineEdit_viewName->text(), ui->label_wn->text(), ui->label_nm->text(), ui->label_send->text())));
 }
+
+void MainWindow::on_btn_clear_clicked()
+{
+    ui->lineEdit_number->setText("");
+    ui->textEdit_reason->setText("");
+}
+
+void MainWindow::on_btn_clearAll_clicked()
+{
+    ui->lineEdit_viewDate->clear();
+    ui->lineEdit_org->clear();
+    ui->lineEdit_word->clear();
+    ui->lineEdit_number->clear();
+    ui->lineEdit_name->clear();
+}
