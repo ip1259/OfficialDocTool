@@ -15,15 +15,6 @@ class DataBase
         QList<QStringList> db = QList<QStringList>();
         int cur = 0;
 
-        QString dataToTable()
-        {
-            QString store = "";
-            foreach(QStringList data, db)
-            {
-                store = store + QString::fromStdString(Controller::combineAsTable(data[0],data[1],data[2],data[3],data[4],data[5],wWords,wNumber,wSend)) + "\n";
-            }
-            return store;
-        }
 
     public:
         DataBase();
@@ -34,6 +25,14 @@ class DataBase
         int getCur()
         {
             return cur;
+        }
+        bool setCur(int i)
+        {
+            cur = i;
+            if(cur>db.length())
+                return false;
+            else
+                return true;
         }
         void nextData()
         {
@@ -47,6 +46,27 @@ class DataBase
             }
 
         }
+        void privData()
+        {
+            if(cur <= 0)
+            {
+                cur = db.length()-1;
+            }
+            else
+            {
+                cur = cur - 1;
+            }
+
+        }
+        QString dataToTable()
+        {
+            QString store = "";
+            foreach(QStringList data, db)
+            {
+                store = store + QString::fromStdString(Controller::combineAsTable(data[0],data[1],data[2],data[3],data[4],data[5],wWords,wNumber,wSend)) + "\n";
+            }
+            return store;
+        }
         void addData(QString date, QString words, QString num, QString org, QString reason, QString name)
         {
             QStringList temp = QStringList();
@@ -58,6 +78,14 @@ class DataBase
             temp.push_back(name);
 
             db.push_back(temp);
+        }
+        int length()
+        {
+            return db.length();
+        }
+        bool isEmpty()
+        {
+            return db.isEmpty();
         }
 };
 

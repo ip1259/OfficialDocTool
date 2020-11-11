@@ -32,6 +32,14 @@ private slots:
 
     void on_btn_nextData_clicked();
 
+    void on_btn_copyAll_clicked();
+
+    void displayViewArea(QStringList);
+
+    void on_btn_next_clicked();
+
+    void on_btn_viewPre_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
