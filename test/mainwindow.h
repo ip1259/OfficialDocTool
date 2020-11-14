@@ -20,8 +20,6 @@ private slots:
 
     void on_textEdit_reason_textChanged();
 
-    void on_btn_rmws_clicked();
-
     void on_calendar_selectionChanged();
 
     void on_btn_copy_clicked();
@@ -39,6 +37,8 @@ private slots:
     void on_btn_next_clicked();
 
     void on_btn_viewPre_clicked();
+
+    void on_btn_loadCB_clicked();
 
 private:
     Ui::MainWindow *ui;

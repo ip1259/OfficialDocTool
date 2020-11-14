@@ -32,6 +32,25 @@ class Controller
             QTextCodec *codec = QTextCodec::codecForName("Big5-ETen");
             return codec->toUnicode(chars);
         }
+        static QStringList loadFromClipBoard()
+        {
+            QStringList *strLst = new QStringList();
+            QString input;
+            QClipboard *clipboard = QApplication::clipboard();
+            input = clipboard->text();
+            input.remove(" ");
+            input.remove("\n");
+            while(!input.isEmpty() && input.contains(chinese("¥D¦®")))
+            {
+                //cout << "/***************************/\n" << input.toLocal8Bit().toStdString() << "\n/************************************/\n";
+                int subLength = input.length()-input.lastIndexOf(chinese("¥D¦®"));
+                strLst->push_front(input.right(subLength));
+                cout << "/***************************/\n" << input.right(subLength).toLocal8Bit().toStdString() << "\n/************************************/\n";
+                input.chop(subLength);
+                //cout << "/***************************/\n" << input.toLocal8Bit().toStdString() << "\n/************************************/\n";
+            }
+            return *strLst;
+        }
 
 };
 

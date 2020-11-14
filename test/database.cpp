@@ -15,6 +15,8 @@ class DataBase
         QList<QStringList> db = QList<QStringList>();
         int cur = 0;
 
+        QStringList *reason ;
+
 
     public:
         DataBase();
@@ -87,9 +89,26 @@ class DataBase
         {
             return db.isEmpty();
         }
+
+        //***********reason Data Func Line*********************
+
+        QString getReasonDataAt(int index)
+        {
+            return reason->at(index);
+        }
+
+        void loadReasonData()
+        {
+            this->reason = new QStringList(Controller::loadFromClipBoard());
+        }
+
+        int getReasonCount()
+        {
+            return this->reason->length();
+        }
 };
 
 DataBase::DataBase()
 {
-
+    this->reason = new QStringList();
 }

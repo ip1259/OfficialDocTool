@@ -47,15 +47,6 @@ void MainWindow::on_textEdit_reason_textChanged()
 
 }
 
-void MainWindow::on_btn_rmws_clicked()
-{
-
-    ui->textEdit_reason->clear();
-    ui->textEdit_reason->paste();
-    ui->textEdit_reason->setText(ui->textEdit_reason->toPlainText().remove("\n"));
-    ui->textEdit_reason->setText(ui->textEdit_reason->toPlainText().remove(" "));
-}
-
 void MainWindow::on_calendar_selectionChanged()
 {
     ui->lineEdit_viewDate->setText(Controller::dateString(ui->calendar->selectedDate()));
@@ -113,6 +104,16 @@ void MainWindow::on_btn_nextData_clicked()
         ui->lcdNumber->display(database.length()+1);
         ui->label_msg->setText(Controller::chinese("訊息:資料儲存成功"));
         database.setCur(database.getCur()+1);
+        ui->lcdNumber_reason->display(ui->lcdNumber_reason->intValue()+1);
+        if(ui->lcdNumber_reason->intValue() <= database.getReasonCount())
+        {
+            ui->textEdit_reason->setText(database.getReasonDataAt(ui->lcdNumber_reason->intValue()-1));
+        }
+        else
+        {
+            ui->textEdit_reason->setText("");
+            ui->label_msg->setText(Controller::chinese("訊息:事由資料沒有了!"));
+        }
         ui->calendar->setFocus();
     }
 }
@@ -173,5 +174,25 @@ void MainWindow::on_btn_viewPre_clicked()
     else
     {
         ui->label_msg->setText(Controller::chinese("訊息:沒有資料"));
+    }
+}
+
+
+
+void MainWindow::on_btn_loadCB_clicked()
+{
+    ui->lcdNumber_reason->display(1);
+    database.loadReasonData();
+    ui->btn_rNext->setEnabled(true);
+    ui->btn_rPriv->setEnabled(true);
+    ui->lcdNumber_reason->setEnabled(true);
+
+    if(database.getReasonCount() != 0)
+    {
+        ui->textEdit_reason->setText(database.getReasonDataAt(ui->lcdNumber_reason->intValue()-1));
+    }
+    else
+    {
+        ui->label_msg->setText(Controller::chinese("訊息:剪貼簿裡沒有事由資料!"));
     }
 }
